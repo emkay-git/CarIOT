@@ -1,0 +1,62 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script type=text/javascript >
+  
+    $(function(){
+     $('#right').click(function(){
+ 	 
+ 	
+ 	 
+	  $.get("/right",function(data){
+	 	console.log(data);
+	 });
+
+});
+     $('#left').click(function(){
+ 	 
+ 	
+ 	 
+	  $.get("/left",function(data){
+	 	console.log(data);
+	 });
+});
+     $('#down').click(function(){
+ 	 
+ 	
+ 	 
+	  $.get("/down",function(data){
+	 	console.log(data);
+	 });
+	
+});
+     $('#up').click(function(){
+ 	
+ 	
+ 	 
+	  $.get("/up",function(data){
+	 	console.log(data);
+	 });
+	
+});
+});
+
+</script>
+    
+     </head>
+<body>
+	
+<button id="left" type="button">Left </button>
+<button id="right" type="button">Right </button>
+<button id="up" type="button">Forward </button>
+<button id="down" type="button">Backward </button>
+<iframe src="http://192.168.0.101:5000" width="640" height="480"></iframe>
+
+</body>
+
+</html>
