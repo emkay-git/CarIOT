@@ -3,7 +3,7 @@ import cv2
 import time
 import sys
 import numpy
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 
 	
 app = Flask(__name__)
@@ -14,6 +14,7 @@ def hello_world():
 
 @app.route('/right')
 def right():
+    ''''
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setup(16,GPIO.OUT)
 	GPIO.output(16,GPIO.LOW)
@@ -37,10 +38,12 @@ def right():
 	GPIO.output(13,GPIO.LOW)	
 	
 	GPIO.cleanup()
-	return "right"
+	'''
+    return "right"
 	##return "hello right"
 @app.route('/left')
 def left():
+    '''
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setup(16,GPIO.OUT)
 	GPIO.output(16,GPIO.LOW)
@@ -67,9 +70,11 @@ def left():
 	#return render_template('index.html')
 		
 	return "hello left"
+	'''
 @app.route('/down')
 def down():
 	#return render_template('index.html')
+	'''
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setup(16,GPIO.OUT)
 	GPIO.output(16,GPIO.HIGH)
@@ -96,12 +101,13 @@ def down():
 	
 	
 	GPIO.cleanup()
+	'''
 	return "Down"
 
 @app.route('/up')
 def up():
 	#return render_template('index.html')
-	
+	'''
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setup(16,GPIO.OUT)
 	GPIO.output(16,GPIO.LOW)
@@ -127,10 +133,11 @@ def up():
 
 	
 	GPIO.cleanup()
+	'''
 	return "up"
 
 	
 
 if __name__ == '__main__':
-    app.run(host='192.168.0.102',port=7000,debug=True)
+    app.run(host='192.168.0.107',port=7000,debug=True)
     #192.168.0.103
